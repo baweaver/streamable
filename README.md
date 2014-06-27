@@ -3,11 +3,14 @@
 Allows you to stream data through a set of functions:
 
 ```ruby
+# Same as Float(1)
 [1] pry(main)> stream 1, :Float
 => 1.0
+# Same as Integer(p(Float(1)))
 [2] pry(main)> stream 1, :Float, :p, :Integer
 1.0
 => 1
+# Same as -> i { i * 5 }[Float(1)]
 [3] pry(main)> stream 1, :Float, -> i { i * 5 }
 => 5.0
 ```
@@ -15,6 +18,7 @@ Allows you to stream data through a set of functions:
 Multistream lets you do this with multiple sets of initial data:
 
 ```ruby
+# Same as ->(a,b) { a * b }[1,2]
 [4] pry(main)> multistream data: [1,2], methods:[->(a,b) { a * b }]
 => 2
 ```
