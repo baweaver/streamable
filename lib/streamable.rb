@@ -2,10 +2,10 @@ require "streamable/version"
 
 module Streamable
   def stream(data, *methods)
-    methods.reduce(data) { |d, m| m.is_a?(Symbol) ? publiic_send(m, d) : m[d] }
+    methods.reduce(data) { |d, m| m.is_a?(Symbol) ? send(m, d) : m[d] }
   end
 
   def multistream(data: [], methods: [])
-    methods.reduce(data) { |d, m| m.is_a?(Symbol) ? public_send(m, *d) : m[*d] }
+    methods.reduce(data) { |d, m| m.is_a?(Symbol) ? send(m, *d) : m[*d] }
   end
 end

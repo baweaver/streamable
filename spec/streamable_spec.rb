@@ -1,6 +1,9 @@
 require 'spec_helper'
 
+include Streamable
+
 describe 'Streamable' do
+
   describe '#stream' do
     context 'With methods as Symbols' do
       it 'returns 5 after piping through method :plus_two' do
