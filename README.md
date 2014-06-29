@@ -3,6 +3,8 @@
 Allows you to stream data through a set of functions (Think point-free programming):
 
 ```ruby
+# Make sure to include Streamable
+[0] pry(main)> include Streamable
 # Same as Float(1)
 [1] pry(main)> stream 1, :Float
 => 1.0
